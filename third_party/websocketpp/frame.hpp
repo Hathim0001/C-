@@ -31,10 +31,10 @@
 #include <algorithm>
 #include <string>
 
-#include <websocketpp/common/system_error.hpp>
-#include <websocketpp/common/network.hpp>
+#include </root/C-/third_party/websocketpp/common/system_error.hpp>
+#include </root/C-/third_party/websocketpp/common/network.hpp>
 
-#include <websocketpp/utilities.hpp>
+#include </root/C-/third_party/websocketpp/utilities.hpp>
 
 namespace websocketpp {
 /// Data structures and utility functions for manipulating WebSocket frames

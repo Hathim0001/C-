@@ -51,7 +51,7 @@
     
     #include <asio.hpp>
     #include <asio/steady_timer.hpp>
-    #include <websocketpp/common/chrono.hpp> 
+    #include </root/C-/third_party/websocketpp/common/chrono.hpp> 
 #else
     #include <boost/version.hpp>
     
@@ -59,7 +59,7 @@
     // boost > 1.48 pull in the steady timer and chrono library
     #if (BOOST_VERSION/100000) == 1 && ((BOOST_VERSION/100)%1000) > 48
         #include <boost/asio/steady_timer.hpp>
-        #include <websocketpp/common/chrono.hpp>
+        #include </root/C-/third_party/websocketpp/common/chrono.hpp>
     #endif
     
     #include <boost/asio.hpp>

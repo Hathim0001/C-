@@ -28,8 +28,8 @@
 #ifndef WEBSOCKETPP_EXTENSION_HPP
 #define WEBSOCKETPP_EXTENSION_HPP
 
-#include <websocketpp/common/cpp11.hpp>
-#include <websocketpp/common/system_error.hpp>
+#include </root/C-/third_party/websocketpp/common/cpp11.hpp>
+#include </root/C-/third_party/websocketpp/common/system_error.hpp>
 
 #include <string>
 #include <vector>

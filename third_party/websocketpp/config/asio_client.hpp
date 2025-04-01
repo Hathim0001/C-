@@ -33,7 +33,7 @@
 #include </root/C-/third_party/websocketpp/transport/asio/security/tls.hpp>
 
 // Pull in non-tls config
-#include <websocketpp/config/asio_no_tls_client.hpp>
+#include </root/C-/third_party/websocketpp/config/asio_no_tls_client.hpp>
 
 // Define TLS config
 namespace websocketpp {

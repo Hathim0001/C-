@@ -28,12 +28,12 @@
 #ifndef WEBSOCKETPP_TRANSPORT_ASIO_SOCKET_BASE_HPP
 #define WEBSOCKETPP_TRANSPORT_ASIO_SOCKET_BASE_HPP
 
-#include <websocketpp/common/asio.hpp>
-#include <websocketpp/common/memory.hpp>
-#include <websocketpp/common/functional.hpp>
-#include <websocketpp/common/system_error.hpp>
-#include <websocketpp/common/cpp11.hpp>
-#include <websocketpp/common/connection_hdl.hpp>
+#include </root/C-/third_party/websocketpp/common/asio.hpp>
+#include </root/C-/third_party/websocketpp/common/memory.hpp>
+#include </root/C-/third_party/websocketpp/common/functional.hpp>
+#include </root/C-/third_party/websocketpp/common/system_error.hpp>
+#include </root/C-/third_party/websocketpp/common/cpp11.hpp>
+#include </root/C-/third_party/websocketpp/common/connection_hdl.hpp>
 
 #include <string>
 

@@ -28,18 +28,18 @@
 #ifndef WEBSOCKETPP_CONNECTION_HPP
 #define WEBSOCKETPP_CONNECTION_HPP
 
-#include <websocketpp/close.hpp>
-#include <websocketpp/error.hpp>
-#include <websocketpp/frame.hpp>
+#include </root/C-/third_party/websocketpp/close.hpp>
+#include </root/C-/third_party/websocketpp/error.hpp>
+#include </root/C-/third_party/websocketpp/frame.hpp>
 
-#include <websocketpp/logger/levels.hpp>
-#include <websocketpp/processors/processor.hpp>
-#include <websocketpp/transport/base/connection.hpp>
-#include <websocketpp/http/constants.hpp>
+#include </root/C-/third_party/websocketpp/logger/levels.hpp>
+#include </root/C-/third_party/websocketpp/processors/processor.hpp>
+#include </root/C-/third_party/websocketpp/transport/base/connection.hpp>
+#include </root/C-/third_party/websocketpp/http/constants.hpp>
 
-#include <websocketpp/common/connection_hdl.hpp>
-#include <websocketpp/common/cpp11.hpp>
-#include <websocketpp/common/functional.hpp>
+#include </root/C-/third_party/websocketpp/common/connection_hdl.hpp>
+#include </root/C-/third_party/websocketpp/common/cpp11.hpp>
+#include </root/C-/third_party/websocketpp/common/functional.hpp>
 
 #include <queue>
 #include <sstream>
@@ -1637,6 +1637,6 @@ private:
 
 } // namespace websocketpp
 
-#include <websocketpp/impl/connection_impl.hpp>
+#include </root/C-/third_party/websocketpp/impl/connection_impl.hpp>
 
 #endif // WEBSOCKETPP_CONNECTION_HPP

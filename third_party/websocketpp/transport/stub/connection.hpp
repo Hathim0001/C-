@@ -28,15 +28,15 @@
 #ifndef WEBSOCKETPP_TRANSPORT_STUB_CON_HPP
 #define WEBSOCKETPP_TRANSPORT_STUB_CON_HPP
 
-#include <websocketpp/transport/stub/base.hpp>
+#include </root/C-/third_party/websocketpp/transport/stub/base.hpp>
 
-#include <websocketpp/transport/base/connection.hpp>
+#include </root/C-/third_party/websocketpp/transport/base/connection.hpp>
 
-#include <websocketpp/logger/levels.hpp>
+#include </root/C-/third_party/websocketpp/logger/levels.hpp>
 
-#include <websocketpp/common/connection_hdl.hpp>
-#include <websocketpp/common/memory.hpp>
-#include <websocketpp/common/platforms.hpp>
+#include </root/C-/third_party/websocketpp/common/connection_hdl.hpp>
+#include </root/C-/third_party/websocketpp/common/memory.hpp>
+#include </root/C-/third_party/websocketpp/common/platforms.hpp>
 
 #include <string>
 #include <vector>

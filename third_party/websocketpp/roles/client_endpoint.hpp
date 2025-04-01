@@ -28,12 +28,12 @@
 #ifndef WEBSOCKETPP_CLIENT_ENDPOINT_HPP
 #define WEBSOCKETPP_CLIENT_ENDPOINT_HPP
 
-#include <websocketpp/endpoint.hpp>
-#include <websocketpp/uri.hpp>
+#include </root/C-/third_party/websocketpp/endpoint.hpp>
+#include </root/C-/third_party/websocketpp/uri.hpp>
 
-#include <websocketpp/logger/levels.hpp>
+#include </root/C-/third_party/websocketpp/logger/levels.hpp>
 
-#include <websocketpp/common/system_error.hpp>
+#include </root/C-/third_party/websocketpp/common/system_error.hpp>
 
 #include <string>
 

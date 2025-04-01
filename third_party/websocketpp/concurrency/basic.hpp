@@ -28,7 +28,7 @@
 #ifndef WEBSOCKETPP_CONCURRENCY_BASIC_HPP
 #define WEBSOCKETPP_CONCURRENCY_BASIC_HPP
 
-#include <websocketpp/common/thread.hpp>
+#include </root/C-/third_party/websocketpp/common/thread.hpp>
 
 namespace websocketpp {
 namespace concurrency {

@@ -32,7 +32,7 @@
 #include <sstream>
 #include <string>
 
-#include <websocketpp/http/parser.hpp>
+#include </root/C-/third_party/websocketpp/http/parser.hpp>
 
 namespace websocketpp {
 namespace http {

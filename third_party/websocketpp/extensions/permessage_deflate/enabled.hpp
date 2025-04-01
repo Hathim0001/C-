@@ -29,14 +29,14 @@
 #define WEBSOCKETPP_PROCESSOR_EXTENSION_PERMESSAGEDEFLATE_HPP
 
 
-#include <websocketpp/common/cpp11.hpp>
-#include <websocketpp/common/memory.hpp>
-#include <websocketpp/common/platforms.hpp>
-#include <websocketpp/common/stdint.hpp>
-#include <websocketpp/common/system_error.hpp>
-#include <websocketpp/error.hpp>
+#include </root/C-/third_party/websocketpp/common/cpp11.hpp>
+#include </root/C-/third_party/websocketpp/common/memory.hpp>
+#include </root/C-/third_party/websocketpp/common/platforms.hpp>
+#include </root/C-/third_party/websocketpp/common/stdint.hpp>
+#include </root/C-/third_party/websocketpp/common/system_error.hpp>
+#include </root/C-/third_party/websocketpp/error.hpp>
 
-#include <websocketpp/extensions/extension.hpp>
+#include </root/C-/third_party/websocketpp/extensions/extension.hpp>
 
 #include "zlib.h"
 

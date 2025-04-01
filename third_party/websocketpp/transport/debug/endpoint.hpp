@@ -28,11 +28,11 @@
 #ifndef WEBSOCKETPP_TRANSPORT_DEBUG_HPP
 #define WEBSOCKETPP_TRANSPORT_DEBUG_HPP
 
-#include <websocketpp/common/memory.hpp>
-#include <websocketpp/logger/levels.hpp>
+#include </root/C-/third_party/websocketpp/common/memory.hpp>
+#include </root/C-/third_party/websocketpp/logger/levels.hpp>
 
-#include <websocketpp/transport/base/endpoint.hpp>
-#include <websocketpp/transport/debug/connection.hpp>
+#include </root/C-/third_party/websocketpp/transport/base/endpoint.hpp>
+#include </root/C-/third_party/websocketpp/transport/debug/connection.hpp>
 
 namespace websocketpp {
 namespace transport {
