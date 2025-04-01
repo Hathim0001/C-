@@ -1,49 +1,81 @@
 # GN build configuration for the WebSocket client project
 
-# Define the toolchain
+# Define the toolchain explicitly
 toolchain("default") {
-  # Default toolchain settings
+  tool("cc") {
+    command = "gcc -Wall -Wextra -std=c++17 -c {{source}} -o {{output}}"
+    outputs = [ "{{source_out_dir}}/{{source_name_part}}.o" ]
+    description = "CC {{source}}"
+  }
+  tool("cxx") {
+    command = "g++ -Wall -Wextra -std=c++17 -D_GLIBCXX_USE_CXX11_ABI=0 -c {{source}} -o {{output}}"
+    outputs = [ "{{source_out_dir}}/{{source_name_part}}.o" ]
+    description = "CXX {{source}}"
+  }
+  tool("link") {
+    command = "g++ -o {{output}} {{inputs}} -lssl -lcrypto -lpthread"
+    outputs = [ "{{target_out_dir}}/{{target_output_name}}{{output_extension}}" ]
+    default_output_extension = ""
+    description = "LINK {{target_out_dir}}/{{target_output_name}}{{output_extension}}"
+  }
+  tool("alink") {
+    command = "ar rcs {{output}} {{inputs}}"
+    outputs = [ "{{target_out_dir}}/lib{{target_output_name}}.a" ]
+    default_output_extension = ".a"
+    description = "AR {{target_out_dir}}/lib{{target_output_name}}.a"
+  }
+  tool("stamp") {
+    command = "touch {{output}}"  # Use GN's standard output substitution
+    description = "STAMP {{output}}"
+  }
+
 }
 
-# External dependencies
+# Compiler flags configuration
+config("compiler_flags") {
+  cflags_cc = [ "-Wall", "-Wextra", "-std=c++17", "-D_GLIBCXX_USE_CXX11_ABI=0" ]
+  cflags = [ "-Wall", "-Wextra", "-std=c++17" ]
+}
+
+# External dependencies configuration
 config("external_config") {
   include_dirs = [
     "third_party/websocketpp",
     "third_party/asio/include",
     "third_party",
   ]
-  defines = [ "ASIO_STANDALONE" ]  # Use standalone Asio
-  if (is_linux) {
-    libs = [ "pthread" ]  # Required for threading on Linux
-  }
+  defines = [ "ASIO_STANDALONE" ]
+  libs = [ "pthread" ]
+}
+
+# Shared source set for common code
+source_set("shared_sources") {
+  sources = [
+    "src/websocket_client.cpp",
+    "src/logger.cpp",
+  ]
+  configs = [ ":external_config", ":compiler_flags" ]
 }
 
 # Main executable target
 executable("websocket_client") {
   sources = [
     "src/main.cpp",
-    "src/websocket_client.cpp",
     "src/cli.cpp",
-    "src/logger.cpp",
   ]
-  configs = [ ":external_config" ]
-  if (is_linux) {
-    # Link OpenSSL for SSL/TLS support
-    libs = [ "ssl", "crypto" ]
-  }
+  deps = [ ":shared_sources" ]
+  configs = [ ":external_config", ":compiler_flags" ]
+  libs = [ "ssl", "crypto" ]
 }
 
 # Test target
 executable("websocket_test") {
   sources = [
     "tests/websocket_test.cpp",
-    "src/websocket_client.cpp",
-    "src/logger.cpp",
   ]
-  configs = [ ":external_config" ]
+  deps = [ ":shared_sources" ]
+  configs = [ ":external_config", ":compiler_flags" ]
   include_dirs = [ "third_party/googletest/googletest/include" ]
-  if (is_linux) {
-    libs = [ "ssl", "crypto", "pthread" ]
-    lib_dirs = [ "third_party/googletest/build/lib" ]  # Path to prebuilt Google Test
-  }
+  libs = [ "ssl", "crypto", "pthread", "gtest", "gtest_main" ]
+  lib_dirs = [ "third_party/googletest/build/lib" ]
 }

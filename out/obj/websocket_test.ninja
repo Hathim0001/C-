@@ -1,0 +1,14 @@
+target_out_dir = obj
+target_output_name = websocket_test
+
+build obj/tests/websocket_test.o: cxx ../tests/websocket_test.cpp
+  source_file_part = websocket_test.cpp
+  source_name_part = websocket_test
+
+build obj/websocket_test: link obj/tests/websocket_test.o obj/src/websocket_client.o obj/src/logger.o || obj/shared_sources.stamp
+  ldflags = -L../third_party/googletest/build/lib
+  libs = -lssl -lcrypto -lpthread -lgtest -lgtest_main
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = 

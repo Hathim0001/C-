@@ -1,0 +1,11 @@
+target_out_dir = obj
+target_output_name = shared_sources
+
+build obj/src/websocket_client.o: cxx ../src/websocket_client.cpp
+  source_file_part = websocket_client.cpp
+  source_name_part = websocket_client
+build obj/src/logger.o: cxx ../src/logger.cpp
+  source_file_part = logger.cpp
+  source_name_part = logger
+
+build obj/shared_sources.stamp: stamp obj/src/websocket_client.o obj/src/logger.o

@@ -1,8 +1,8 @@
 #ifndef WEBSOCKET_CLIENT_H
 #define WEBSOCKET_CLIENT_H
 
-#include <websocketpp/config/asio_client.hpp>
-#include <websocketpp/client.hpp>
+#include </root/C-/third_party/websocketpp/config/asio_client.hpp>
+#include </root/C-/third_party/websocketpp/client.hpp>
 #include <functional>
 #include <string>
 

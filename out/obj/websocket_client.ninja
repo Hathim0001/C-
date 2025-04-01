@@ -1,0 +1,17 @@
+target_out_dir = obj
+target_output_name = websocket_client
+
+build obj/src/main.o: cxx ../src/main.cpp
+  source_file_part = main.cpp
+  source_name_part = main
+build obj/src/cli.o: cxx ../src/cli.cpp
+  source_file_part = cli.cpp
+  source_name_part = cli
+
+build obj/websocket_client: link obj/src/main.o obj/src/cli.o obj/src/websocket_client.o obj/src/logger.o || obj/shared_sources.stamp
+  ldflags =
+  libs = -lssl -lcrypto -lpthread
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = 
