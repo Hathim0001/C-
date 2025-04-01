@@ -1,0 +1,49 @@
+# GN build configuration for the WebSocket client project
+
+# Define the toolchain
+toolchain("default") {
+  # Default toolchain settings
+}
+
+# External dependencies
+config("external_config") {
+  include_dirs = [
+    "third_party/websocketpp",
+    "third_party/asio/include",
+    "third_party",
+  ]
+  defines = [ "ASIO_STANDALONE" ]  # Use standalone Asio
+  if (is_linux) {
+    libs = [ "pthread" ]  # Required for threading on Linux
+  }
+}
+
+# Main executable target
+executable("websocket_client") {
+  sources = [
+    "src/main.cpp",
+    "src/websocket_client.cpp",
+    "src/cli.cpp",
+    "src/logger.cpp",
+  ]
+  configs = [ ":external_config" ]
+  if (is_linux) {
+    # Link OpenSSL for SSL/TLS support
+    libs = [ "ssl", "crypto" ]
+  }
+}
+
+# Test target
+executable("websocket_test") {
+  sources = [
+    "tests/websocket_test.cpp",
+    "src/websocket_client.cpp",
+    "src/logger.cpp",
+  ]
+  configs = [ ":external_config" ]
+  include_dirs = [ "third_party/googletest/googletest/include" ]
+  if (is_linux) {
+    libs = [ "ssl", "crypto", "pthread" ]
+    lib_dirs = [ "third_party/googletest/build/lib" ]  # Path to prebuilt Google Test
+  }
+}
